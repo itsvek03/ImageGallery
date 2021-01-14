@@ -10,3 +10,14 @@ export function fetcImages(category = "tree") {
             })
     }
 }
+
+
+export function fetchImagesBylikes(data, likes) {
+    return (dispatch) => {
+        let newData = data.filter(imgdata => imgdata.likes > likes);
+        dispatch({
+            type: FETCH_IMAGES,
+            payload: newData
+        })
+    }
+}
