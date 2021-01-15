@@ -10,6 +10,7 @@ import SliderContainer from './SliderContainer'
 class App extends Component {
     componentDidMount() {
         this.props.fetcImages()
+        this.setState({ imageData: this.props.fetchedImages });
         console.log(this.props.fetchedImages)
     }
 
@@ -35,7 +36,7 @@ class App extends Component {
                             <div className="m-5">
                                 <SliderContainer
                                     likesimg={this.props.fetchImagesBylikes}
-                                    data={this.props.fetchedImages} />
+                                    data={this.props.globalData} />
                             </div>
 
                         </div>
@@ -49,7 +50,8 @@ class App extends Component {
 const mapStateToProps = (state) => {
     console.log(state)
     return {
-        fetchedImages: state.data
+        fetchedImages: state.data,
+        globalData: state.globalData
     }
 }
 
