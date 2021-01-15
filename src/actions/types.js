@@ -1,1 +1,2 @@
-export const FETCH_IMAGES = "FETCH_IMAGES"
+export const FETCH_IMAGES = "FETCH_IMAGES";
+export const GLOBAL_IMAGES = "GLOBAL_IMAGES";
